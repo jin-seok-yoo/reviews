@@ -24,7 +24,7 @@ public class ReviewController {
     }
 
     @PostMapping("/submitReview")
-    public String submitReview(@ModelAttribute Review review, @RequestParam("image") MultipartFile image) {
+    public String submitReview(@ModelAttribute Review review, @RequestParam MultipartFile image) {
         // 이미지 업로드 처리
         if (!image.isEmpty()) {
             String uploadDir = "src/main/resources/static/images/";
