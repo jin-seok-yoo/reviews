@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>리뷰 작성</title>
+</head>
+<body>
+    <h1>리뷰 작성</h1>
+    <form th:action="@{/review/save}" th:object="${review}" method="post">
+        <label>별점: </label>
+        <input type="number" th:field="*{rating}" min="1" max="5"/>
+        <br/>
+        <label>리뷰 내용: </label>
+        <textarea th:field="*{content}" rows="5"></textarea>
+        <br/>
+        <label>사진 첨부: </label>
+        <input type="file" th:field="*{files}" multiple/>
+        <br/>
+        <button type="submit">리뷰 작성</button>
+        <a href="/reviews"><button type="button">작성 취소</button></a>
+    </form>
+</body>
+</html>
